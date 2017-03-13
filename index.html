@@ -1,19 +1,31 @@
 <html>
 <head>
-    <script src="./index.js"></script>    
+    <script src="main/index.js"></script>
+    <script type="text/javascript" src="main/username.js"></script>
+    <script type="text/javascript" src="main/email.js"></script>
+    <script type="text/javascript" src="main/phone.js"></script>
+    <script type="text/javascript" src="main/password.js"></script>
+    <script type="text/javascript" src="main/password_confirmation.js"></script>
+    <!--<script src="spec/test.js"></script>-->
+
+    <style>
+        p{
+            color : red;
+        }
+    </style>
 </head>
 <body>
 <h1>Welcome Signup MyWebsite</h1>
 <form action="/signup" onsubmit="validateUserInput();return false;" method="post">
-    Username: <input type="text" name="username" title="Username"><br/>
+    Username: <input type="text" name="username" title="Username" id="username" onchange="showMessage(validateUseName, 'username', 'usernameError')"><br/>
     <p id="usernameError"></p>
-    Email: <input type="text" name="email" title="Email"><br/>
+    Email: <input type="text" name="email" title="Email" id="email" onchange="showMessage(validateEmail, 'email', 'emailError')"><br/>
     <p id="emailError"></p>
-    Phone: <input type="text" name="phone" title="Phone"><br/>
+    Phone: <input type="text" name="phone" title="Phone" id="phone" onchange="showMessage(validatePhone, 'phone', 'phoneError')"><br/>
     <p id="phoneError"></p>
-    Password: <input type="text" name="password" title="Password"><br/>
+    Password: <input type="password" name="password" title="Password" id="password" onchange="showMessage(validatePassword, 'password', 'passwordError')"><br/>
     <p id="passwordError"></p>
-    Type your password again: <input type="text" name="passwordConfirmation" title="Type your password again"><br/>
+    Type your password again: <input type="password" name="passwordConfirmation" title="Type your password again" id="passwordConfirmation"><br/>
     <p id="passwordConfirmationError"></p>
     <input type="submit" value="Signup">
 </form>
